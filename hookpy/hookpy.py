@@ -8,13 +8,16 @@ class Hook:
         self.hm.HookKeyboard()
         self.hm.KeyDown = self.kbdown
         self.hm.KeyUp = self.kbup
-        self.hm.start()
+        # self.hm.start()
         self.active_modifiers=[]
         self.modifiers=['Control_L','Control_R','Shift_L','Shift_R']
         self.onKbEvent=onKbEvent
         self.onMouseEvent= onMouseEvent
         self.kill_on_esc=kill_on_esc
-
+    
+    def start(self):
+        self.hm.start()
+        
     def kbdown(self, event):
         # print event.Key,'down'
         if event.Key in self.modifiers:
